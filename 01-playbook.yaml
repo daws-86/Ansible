@@ -1,0 +1,6 @@
+ - name: ping the server
+ hosts: frontend #Which server you are connecting to
+ #Lists of tasks/collections/modulles
+ tasks:
+ - name:ping
+ anisble.builtin.ping:
