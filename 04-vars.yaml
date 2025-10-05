@@ -1,11 +1,14 @@
-- name: play level variables
-  hosts: local
-  connection: local #Ansible is connecting to localhost
-   vars:
-    COURSE: Ansible
-    DURATION: 10HRS
-    Trainer: Sita
+---
+- name: Variable example playbook
+  hosts: localhost
+  connection: local  # Ansible is connecting to localhost
+
+  vars:
+    course: "DevOps"
+    duration: "120 hours"
+    trainer: "John Doe"
+
   tasks:
-  - name: print the course info
-    ansible.builtin.debug:
-      msg: "Course Name is:{{ COURSE }}, Duration: {{ DURATION }}, Trainer: {{ Trainer }}"
+    - name: Print variable values
+      ansible.builtin.debug:
+        msg: "Course: {{ course }}, Duration: {{ duration }}, Trainer: {{ trainer }}"
