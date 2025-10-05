@@ -6,8 +6,8 @@
   vars:
     person_name: from play level
 
-  vars_files:
-    - course.yaml
+  # vars_files:
+  #   - course.yaml
 
   vars_prompt:
     - name: person_name
@@ -16,8 +16,13 @@
 
   tasks:
     - name: From task level
-      vars:
-        person_name: from task level
+      # vars:
+      #   person_name: from task level
       ansible.builtin.debug:
         msg: "Name: {{ person_name }}"
+
+        #1. args or command line
+        #2. from prompt
+        #3. files
+        #4. prompt
 
