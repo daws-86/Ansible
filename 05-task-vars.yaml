@@ -1,0 +1,13 @@
+---
+- name: Task variable example playbook
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Print course info from task-level vars
+      vars:
+        course: "Ansible"
+        duration: "20 hours"
+        trainer: "Jane Smith"
+      ansible.builtin.debug:
+        msg: "Course: {{ course }}, Duration: {{ duration }}, Trainer: {{ trainer }}"
