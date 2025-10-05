@@ -1,5 +1,6 @@
-- name: ping
-  hosts: frontend     # Which server group to connect
-  tasks:              # List of tasks
-    - name: ping test
+- name: ping the server
+  hosts: frontend       # Which server you are connecting to
+  tasks:                # List of tasks
+    - name: ping
       ansible.builtin.ping:
+
