@@ -4,19 +4,20 @@
   connection: local
 
   vars:
-    name: from play level
+    person_name: from play level
 
   vars_files:
     - course.yaml
 
   vars_prompt:
-    - name: name
+    - name: person_name
       prompt: What is your name?
       private: false
 
   tasks:
     - name: From task level
       vars:
-        name: from task level
+        person_name: from task level
       ansible.builtin.debug:
-        msg: "Name: {{ name }}"
+        msg: "Name: {{ person_name }}"
+
