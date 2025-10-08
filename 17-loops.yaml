@@ -1,14 +1,14 @@
-- name: Install packages
+- - name: Install packages
   hosts: local
   connection: local
   become: yes  # needed to install packages
 
   tasks:
-    - name: install multiple packages
+    - name: install or remove packages based on loop values
       ansible.builtin.package:
-        name: "{{ item }}"
-        state: latest
+        name: "{{ item.name }}"
+        state: "{{ item.state }}"
       loop:
-        - { name: "nginx", state: "absent"}
-        - { name: "mysql", state: "absent"}
-        - { name:  "zip", state: "latest"}
+        - { name: "nginx", state: "absent" }
+        - { name: "mysql", state: "absent" }
+        - { name: "zip", state: "latest" }
